@@ -6,9 +6,7 @@ import yaml
 
 def main():
     st.title("Speach to text app")
-    with open('config.yaml', 'r') as file:
-        key_file = yaml.safe_load(file)
-    open_ai_key = key_file['open_ai_key']
+    open_ai_key = os.environ['open_api_key']
 
     # File uploader widget
     uploaded_file = st.file_uploader("Choose a file", type=None)
